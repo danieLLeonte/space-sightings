@@ -1,46 +1,59 @@
-import { useState } from "react";
-
 type ImageSliderProps = {
-  imageUrls: string[];
+  images: unknown[];
+  imageIndex: number;
+  setImageIndex: (index: number) => void;
 };
 
-export const ImageSlider = ({ imageUrls }: ImageSliderProps) => {
-  const [imageIndex, setImageIndex] = useState(0);
-
+export const ImageSlider = ({
+  images,
+  imageIndex,
+  setImageIndex,
+}: ImageSliderProps) => {
   const incrementImageIndex = () => {
-    setImageIndex((imageIndex + 1) % imageUrls.length);
+    setImageIndex((imageIndex + 1) % images.length);
+  };
+
+  const decrementImageIndex = () => {
+    setImageIndex((imageIndex - 1 + images.length) % images.length);
   };
 
   return (
-    <div className="flex flex-col items-center justify-center h-screen">
+    <div className="flex flex-col items-center justify-center">
       <div className="flex items-center justify-center -space-x-52">
         <img
           key={imageIndex - 1}
-          src={
-            imageUrls[(imageIndex - 1 + imageUrls.length) % imageUrls.length]
-          }
+          src={images[(imageIndex - 1 + images.length) % images.length].url}
           alt="NASA"
-          className="border-4 border-yellow-50 w-2/5 aspect-square object-cover rounded-3xl"
+          className="border-4 border-yellow-50 w-2/6 aspect-square object-cover rounded-3xl mt-10"
         />
         <img
           key={imageIndex}
-          src={imageUrls[imageIndex]}
+          src={images[imageIndex].url}
           alt="NASA"
-          className="border-4 border-yellow-50 w-3/5 aspect-square object-cover rounded-3xl z-10"
+          className="border-4 border-yellow-50 w-3/6 aspect-square object-cover rounded-3xl z-10"
         />
         <img
           key={imageIndex + 1}
-          src={imageUrls[(imageIndex + 1) % imageUrls.length]}
+          src={images[(imageIndex + 1) % images.length].url}
           alt="NASA"
-          className="border-4 border-yellow-50 w-2/5 aspect-square object-cover rounded-3xl"
+          className="border-4 border-yellow-50 w-2/6 aspect-square object-cover rounded-3xl mt-10 "
         />
       </div>
-      <button
-        className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
-        onClick={incrementImageIndex}
-      >
-        Next
-      </button>
+
+      <div className="flex items-center justify-between w-full absolute bottom-0">
+        <button
+          className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
+          onClick={incrementImageIndex}
+        >
+          Next
+        </button>
+        <button
+          className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
+          onClick={decrementImageIndex}
+        >
+          Prev
+        </button>
+      </div>
     </div>
   );
 };
