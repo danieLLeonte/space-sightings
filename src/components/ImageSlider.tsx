@@ -1,3 +1,4 @@
+import { useState } from "react";
 import {
   BsFillArrowLeftCircleFill,
   BsFillArrowRightCircleFill,
@@ -15,12 +16,17 @@ export const ImageSlider = ({
   setImageIndex,
 }: ImageSliderProps) => {
   const { title, date, url, hdurl, media_type, copyright } = images[imageIndex];
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);
 
   const incrementImageIndex = () => {
+    setIsButtonDisabled(true);
+    setTimeout(() => setIsButtonDisabled(false), 300);
     setImageIndex(imageIndex + 1);
   };
 
   const decrementImageIndex = () => {
+    setIsButtonDisabled(true);
+    setTimeout(() => setIsButtonDisabled(false), 300);
     setImageIndex(imageIndex - 1);
   };
 
@@ -31,21 +37,30 @@ export const ImageSlider = ({
       </p>
       <div className="flex flex-col items-center justify-center bg-black gap-1 sm:relative sticky top-2 pb-4">
         <div className="outline outline-offset-4 outline-2 sm:w-[60%] aspect-square rounded-3xl flex justify-center items-center">
-          <a href={hdurl || url} target="_blank" rel="noreferrer noopener">
-            <img
-              key={imageIndex}
-              src={url || hdurl}
-              alt={title}
-              className="sm:w-[65rem]"
+          {media_type === "video" ? (
+            <iframe
+              src={url}
+              title="YouTube video player"
+              className="sm:w-[65rem] h-5/6 min-[406px]:w-96"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture, web-share"
+              allowFullScreen
             />
-          </a>
+          ) : (
+            <a href={hdurl || url} target="_blank" rel="noreferrer noopener">
+              <img
+                key={imageIndex}
+                src={url || hdurl}
+                alt={title}
+                className="sm:w-[65rem]"
+              />
+            </a>
+          )}
         </div>
         <div className="flex justify-between items-center w-full mt-3.5 sm:w-3/6">
           <button
             onClick={decrementImageIndex}
-            disabled={imageIndex === 0}
-            className="disabled:opacity-60"
-            style={{ maxWidth: "90%" }}
+            disabled={imageIndex === 0 || isButtonDisabled}
+            className="disabled:opacity-75"
           >
             <BsFillArrowLeftCircleFill className="text-5xl text-[#1d9bf0] bg-white rounded-full" />
           </button>
@@ -58,8 +73,8 @@ export const ImageSlider = ({
           </p>
           <button
             onClick={incrementImageIndex}
-            className="disabled:opacity-60"
-            disabled={imageIndex === images.length - 1}
+            disabled={imageIndex === images.length - 1 || isButtonDisabled}
+            className="disabled:opacity-75"
           >
             <BsFillArrowRightCircleFill className="text-5xl text-[#1d9bf0] bg-white rounded-full" />
           </button>
