@@ -20,13 +20,13 @@ export const ImageSlider = ({
 
   const incrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 300);
+    setTimeout(() => setIsButtonDisabled(false), 500);
     setImageIndex(imageIndex + 1);
   };
 
   const decrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 300);
+    setTimeout(() => setIsButtonDisabled(false), 500);
     setImageIndex(imageIndex - 1);
   };
 
@@ -41,18 +41,13 @@ export const ImageSlider = ({
             <iframe
               src={url}
               title="YouTube video player"
-              className="sm:w-[65rem] h-5/6 min-[406px]:w-96"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture, web-share"
+              className="sm:w-[65rem] h-5/6 min-[406px]:w-96 w-[92vw]"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;"
               allowFullScreen
-            />
+            ></iframe>
           ) : (
             <a href={hdurl || url} target="_blank" rel="noreferrer noopener">
-              <img
-                key={imageIndex}
-                src={url || hdurl}
-                alt={title}
-                className="sm:w-[65rem]"
-              />
+              <img src={url || hdurl} alt={title} className="sm:w-[65rem]" />
             </a>
           )}
         </div>
