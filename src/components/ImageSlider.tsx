@@ -32,10 +32,10 @@ export const ImageSlider = ({
 
   return (
     <>
-      <p className="text-xs text-gray-300 -my-4 -mb-5">
+      <p className="text-xs text-gray-300 -my-4">
         {copyright ? `Copyright: ${copyright}` : <span>&nbsp;</span>}
       </p>
-      <div className="flex flex-col items-center justify-center bg-black gap-1 sm:relative sticky top-2 pb-4">
+      <div className="flex flex-col items-center justify-center bg-black gap-2 sm:relative sticky top-2 pb-4">
         <div className="outline outline-offset-4 outline-2 sm:w-[60%] aspect-square rounded-3xl flex justify-center items-center">
           {media_type === "video" ? (
             <iframe
