@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { ImageSlider } from "./components/ImageSlider";
+import { ImageSlider, Navbar } from "./components";
 import { getImagesRange, getImage } from "./utils";
 import { Image } from "./interfaces";
 
@@ -45,7 +45,10 @@ function App() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-2">
-      <div className="flex flex-col items-center justify-start min-h-screen py-2 gap-y-6">
+      <header className="flex items-center justify-between py-2 border-b-2 pb-2.5 mb-1.5 border-primaryBlue/60">
+        <Navbar />
+      </header>
+      <main className="flex flex-col items-center justify-start min-h-screen py-2 gap-y-6">
         <h2 className="text-3xl font-bold text-center">{title}</h2>
         <ImageSlider
           images={images}
@@ -53,7 +56,7 @@ function App() {
           setImageIndex={setImageIndex}
         />
         <p className="max-w-prose -mt-4">{explanation}</p>
-      </div>
+      </main>
     </div>
   );
 }

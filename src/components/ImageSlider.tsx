@@ -12,7 +12,7 @@ type ImageSliderProps = {
   setImageIndex: (index: number) => void;
 };
 
-export const ImageSlider = ({
+const ImageSlider = ({
   images,
   imageIndex,
   setImageIndex,
@@ -22,13 +22,13 @@ export const ImageSlider = ({
 
   const incrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 400);
+    setTimeout(() => setIsButtonDisabled(false), 500);
     setImageIndex(imageIndex + 1);
   };
 
   const decrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 400);
+    setTimeout(() => setIsButtonDisabled(false), 500);
     setImageIndex(imageIndex - 1);
   };
 
@@ -63,7 +63,7 @@ export const ImageSlider = ({
             disabled={imageIndex === 0 || isButtonDisabled}
             className="disabled:opacity-75"
           >
-            <BsFillArrowLeftCircleFill className="text-5xl text-[#1d9bf0] bg-white rounded-full" />
+            <BsFillArrowLeftCircleFill className="text-5xl text-primaryBlue bg-white rounded-full" />
           </button>
           <p className="text-gray-300">
             {new Date(date).toLocaleDateString("en-US", {
@@ -77,10 +77,12 @@ export const ImageSlider = ({
             disabled={imageIndex === images.length - 1 || isButtonDisabled}
             className="disabled:opacity-75"
           >
-            <BsFillArrowRightCircleFill className="text-5xl text-[#1d9bf0] bg-white rounded-full" />
+            <BsFillArrowRightCircleFill className="text-5xl text-primaryBlue bg-white rounded-full" />
           </button>
         </div>
       </div>
     </>
   );
 };
+
+export default ImageSlider;
