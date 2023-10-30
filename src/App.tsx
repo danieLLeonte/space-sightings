@@ -31,7 +31,7 @@ function App() {
         .toISOString()
         .slice(0, 10);
       const data = await getImage(date);
-      if (data.length > 0) {
+      if (data !== null) {
         setImages((prevImages) => [...prevImages, data]);
       }
     };
@@ -52,7 +52,7 @@ function App() {
           imageIndex={imageIndex}
           setImageIndex={setImageIndex}
         />
-        <p className="max-w-prose -mt-5">{explanation}</p>
+        <p className="max-w-prose -mt-4">{explanation}</p>
       </div>
     </div>
   );

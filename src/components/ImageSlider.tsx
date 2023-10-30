@@ -22,13 +22,13 @@ export const ImageSlider = ({
 
   const incrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 500);
+    setTimeout(() => setIsButtonDisabled(false), 400);
     setImageIndex(imageIndex + 1);
   };
 
   const decrementImageIndex = () => {
     setIsButtonDisabled(true);
-    setTimeout(() => setIsButtonDisabled(false), 500);
+    setTimeout(() => setIsButtonDisabled(false), 400);
     setImageIndex(imageIndex - 1);
   };
 
@@ -49,7 +49,11 @@ export const ImageSlider = ({
             ></iframe>
           ) : (
             <a href={hdurl || url} target="_blank" rel="noreferrer noopener">
-              <img src={url || hdurl} alt={title} className="sm:w-[65rem]" />
+              <img
+                src={url || hdurl}
+                alt={title}
+                className="sm:w-[65rem] aspect-square object-contain"
+              />
             </a>
           )}
         </div>

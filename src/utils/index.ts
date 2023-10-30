@@ -5,8 +5,11 @@ export const getImagesRange = async (startDate: string, endDate: string) => {
 
   try {
     const response = await fetch(url);
-    const data = await response.json();
-    return data.reverse();
+    if (response.ok) {
+      const data = await response.json();
+      return data.reverse();
+    }
+    throw new Error("Network response was not ok.");
   } catch (error) {
     console.error(error);
     return reserveImages.reverse();
@@ -18,11 +21,14 @@ export const getImage = async (date: string) => {
 
   try {
     const response = await fetch(url);
-    const data = await response.json();
-    return data;
+    if (response.ok) {
+      const data = await response.json();
+      return data;
+    }
+    throw new Error("Network response was not ok.");
   } catch (error) {
     console.error(error);
-    return [];
+    return null;
   }
 };
 
