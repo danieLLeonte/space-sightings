@@ -4,8 +4,10 @@ import {
   BsFillArrowRightCircleFill,
 } from "react-icons/bs";
 
+import { Image } from "../interfaces";
+
 type ImageSliderProps = {
-  images: unknown[];
+  images: Image[];
   imageIndex: number;
   setImageIndex: (index: number) => void;
 };
