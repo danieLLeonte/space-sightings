@@ -1,3 +1,8 @@
+import {
+  BsFillArrowLeftCircleFill,
+  BsFillArrowRightCircleFill,
+} from "react-icons/bs";
+
 type ImageSliderProps = {
   images: unknown[];
   imageIndex: number;
@@ -18,42 +23,32 @@ export const ImageSlider = ({
   };
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <div className="flex items-center justify-center -space-x-52">
-        <img
-          key={imageIndex - 1}
-          src={images[(imageIndex - 1 + images.length) % images.length].url}
-          alt="NASA"
-          className="border-4 border-yellow-50 w-2/6 aspect-square object-cover rounded-3xl mt-10"
-        />
-        <img
-          key={imageIndex}
-          src={images[imageIndex].url}
-          alt="NASA"
-          className="border-4 border-yellow-50 w-3/6 aspect-square object-cover rounded-3xl z-10"
-        />
-        <img
-          key={imageIndex + 1}
-          src={images[(imageIndex + 1) % images.length].url}
-          alt="NASA"
-          className="border-4 border-yellow-50 w-2/6 aspect-square object-cover rounded-3xl mt-10 "
-        />
+    <>
+      {images[imageIndex].copyright && (
+        <p className="text-sm text-gray-300 -my-3">
+          Copyright: {images[imageIndex].copyright}
+        </p>
+      )}
+      <div className="flex flex-col items-center justify-center bg-black gap-1 sm:relative sticky top-2 pb-4">
+        <div className="outline outline-offset-4 outline-2 sm:w-[60%] h-3/6 aspect-square rounded-3xl flex justify-center items-center">
+          <img
+            key={imageIndex}
+            src={images[imageIndex].url} // what if it's a video?
+            alt={images[imageIndex].title}
+          />
+        </div>
+        <p className="text- text-gray-300 mt-1 -mb-2">
+          {images[imageIndex].date}
+        </p>
+        <div className="flex justify-between w-full -mt-2 sm:w-3/6">
+          <button className="" onClick={decrementImageIndex}>
+            <BsFillArrowLeftCircleFill className="text-5xl" />
+          </button>
+          <button className="" onClick={incrementImageIndex}>
+            <BsFillArrowRightCircleFill className="text-5xl" />
+          </button>
+        </div>
       </div>
-
-      <div className="flex items-center justify-between w-full absolute bottom-0">
-        <button
-          className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
-          onClick={incrementImageIndex}
-        >
-          Next
-        </button>
-        <button
-          className="px-4 py-2 mt-4 text-white bg-blue-500 rounded hover:bg-blue-700"
-          onClick={decrementImageIndex}
-        >
-          Prev
-        </button>
-      </div>
-    </div>
+    </>
   );
 };

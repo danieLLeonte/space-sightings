@@ -90,15 +90,19 @@ const tempImages = [
 function App() {
   const [imageIndex, setImageIndex] = useState(0);
 
+  const { title, date, explanation, url, hdurl, media_type, copyright } =
+    tempImages[imageIndex];
+
   return (
-    <div className="max-w-7xl mx-auto px-4">
-      <div className="flex flex-col items-center justify-center min-h-screen py-2 gap-y-10">
+    <div className="max-w-7xl mx-auto px-4 py-2">
+      <div className="flex flex-col items-center justify-center min-h-screen py-2 gap-y-6">
+        <h2 className="text-3xl font-bold text-center">{title}</h2>
         <ImageSlider
           images={tempImages}
           imageIndex={imageIndex}
           setImageIndex={setImageIndex}
         />
-        <p className="max-w-3xl">{tempImages[imageIndex].explanation}</p>
+        <p className="max-w-prose -mt-4">{explanation}</p>
       </div>
     </div>
   );
