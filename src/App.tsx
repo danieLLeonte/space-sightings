@@ -58,7 +58,7 @@ function App() {
   );
 
   return (
-    <div className="max-w-7xl mx-auto px-4 pb-2">
+    <div className="max-w-7xl mx-auto px-4">
       <header className="flex items-center justify-between py-2 border-b-2 border-primaryBlue/60">
         <Navbar />
       </header>
@@ -66,6 +66,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="about" element={<AboutPage />} />
       </Routes>
+      <footer className="mt-2 py-3 border-t-2 border-primaryBlue/60">
+        <p className="text-center text-gray-500 text-sm">Space Sightings</p>
+      </footer>
     </div>
   );
 }
