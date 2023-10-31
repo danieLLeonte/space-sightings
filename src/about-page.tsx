@@ -4,7 +4,7 @@ export default function AboutPage() {
       <h2 className="text-3xl font-bold text-center">About</h2>
       <p className="max-w-prose">
         "Space Sightings" is a web application that integrates NASA's Astronomy
-        Picture of the Day (APOD) API, to provide users with a daily dose of
+        Picture of the Day (APOD) API to provide users with a daily dose of
         space wonders.
       </p>
       <span className="max-w-prose">

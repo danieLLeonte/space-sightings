@@ -57,9 +57,9 @@ const ImageSlider = ({
         <button
           onClick={decrementImageIndex}
           disabled={imageIndex === 0 || isButtonDisabled}
-          className="disabled:opacity-75"
+          className="disabled:text-black/50 text-primaryBlue"
         >
-          <BsFillArrowLeftCircleFill className="text-5xl text-primaryBlue bg-white rounded-full" />
+          <BsFillArrowLeftCircleFill className="text-5xl bg-white rounded-full" />
         </button>
         <div className="flex flex-col items-center justify-between gap-2 h-full">
           <p className="text-xs text-gray-300">
@@ -76,9 +76,9 @@ const ImageSlider = ({
         <button
           onClick={incrementImageIndex}
           disabled={imageIndex === images.length - 1 || isButtonDisabled}
-          className="disabled:opacity-75"
+          className="disabled:text-black/50 text-primaryBlue"
         >
-          <BsFillArrowRightCircleFill className="text-5xl text-primaryBlue bg-white rounded-full" />
+          <BsFillArrowRightCircleFill className="text-5xl bg-white rounded-full" />
         </button>
       </div>
     </div>
