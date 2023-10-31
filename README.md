@@ -1,4 +1,4 @@
-# [Space Sightings 🛸](https://mellifluous-parfait-974ecd.netlify.app/)
+# [Space Sightings 🛸](https://mellifluous-parfait-974ecd.netlify.app/){:target="\_blank"}
 
 ![Space Sightings Home Page](home_page.png)
 
@@ -10,7 +10,7 @@ space wonders.
 
 "Each day a different image or photograph of our fascinating universe is
 featured, along with a brief explanation written by a professional
-astronomer." -{" "} [NASA APOD](https://apod.nasa.gov/apod/astropix.html)
+astronomer." - <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">NASA APOD</a>
 
 # React + TypeScript + Vite
 
@@ -39,5 +39,3 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
-
-# space-sightings
