@@ -1,4 +1,4 @@
-# [Space Sightings 🛸](https://mellifluous-parfait-974ecd.netlify.app/){:target="\_blank"}
+# [Space Sightings 🛸](https://mellifluous-parfait-974ecd.netlify.app/)
 
 ![Space Sightings Home Page](home_page.png)
 
@@ -10,7 +10,7 @@ space wonders.
 
 "Each day a different image or photograph of our fascinating universe is
 featured, along with a brief explanation written by a professional
-astronomer." - <a href="https://apod.nasa.gov/apod/astropix.html" target="_blank">NASA APOD</a>
+astronomer." - [NASA APOD](https://apod.nasa.gov/apod/astropix.html)
 
 # React + TypeScript + Vite
 
