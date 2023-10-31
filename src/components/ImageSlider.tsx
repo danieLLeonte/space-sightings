@@ -53,7 +53,7 @@ const ImageSlider = ({
           </a>
         )}
       </div>
-      <div className="flex justify-between items-center w-full mt-3.5 sm:w-3/6">
+      <div className="flex justify-between items-center gap-x-4 w-full mt-3.5 sm:w-3/6">
         <button
           onClick={decrementImageIndex}
           disabled={imageIndex === 0 || isButtonDisabled}
