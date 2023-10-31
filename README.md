@@ -1,3 +1,17 @@
+# [Space Sightings 🛸](https://mellifluous-parfait-974ecd.netlify.app/)
+
+![Space Sightings Home Page](home_page.png)
+
+## Description
+
+"Space Sightings" is a web application that integrates NASA's Astronomy
+Picture of the Day (APOD) API to provide users with a daily dose of
+space wonders.
+
+"Each day a different image or photograph of our fascinating universe is
+featured, along with a brief explanation written by a professional
+astronomer." -{" "} [NASA APOD](https://apod.nasa.gov/apod/astropix.html)
+
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -25,4 +39,5 @@ If you are developing a production application, we recommend updating the config
 - Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
 - Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
 - Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
 # space-sightings
