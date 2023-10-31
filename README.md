@@ -4,9 +4,7 @@
 
 ## Description
 
-"Space Sightings" is a web application that integrates NASA's Astronomy
-Picture of the Day (APOD) API to provide users with a daily dose of
-space wonders.
+Web application that integrates NASA's Astronomy Picture of the Day API to provide users with a daily dose of space wonders.
 
 "Each day a different image or photograph of our fascinating universe is
 featured, along with a brief explanation written by a professional
