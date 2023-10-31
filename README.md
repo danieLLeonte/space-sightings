@@ -12,7 +12,7 @@ space wonders.
 featured, along with a brief explanation written by a professional
 astronomer." - [NASA APOD](https://apod.nasa.gov/apod/astropix.html)
 
-# React + TypeScript + Vite
+## React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
