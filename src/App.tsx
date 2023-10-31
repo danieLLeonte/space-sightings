@@ -46,7 +46,7 @@ function App() {
 
   const HomePage = () => (
     <main className="flex flex-col items-center justify-start min-h-screen py-2 gap-y-6">
-      <h2 className="text-3xl font-bold text-center">{title}</h2>
+      <h2 className="text-3xl font-bold text-center -mb-2">{title}</h2>
       <ImageSlider
         images={images}
         imageIndex={imageIndex}
