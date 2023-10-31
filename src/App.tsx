@@ -4,6 +4,7 @@ import { Route, Routes } from "react-router-dom";
 import { ImageSlider, Navbar } from "./components";
 import { getImagesRange, getImage } from "./utils";
 import { Image } from "./interfaces";
+import AboutPage from "./about-page";
 
 const startDate = new Date(Date.now() - 2 * 24 * 60 * 60 * 1000)
   .toISOString()
@@ -63,7 +64,7 @@ function App() {
       </header>
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="about" element={<div>about</div>} />
+        <Route path="about" element={<AboutPage />} />
       </Routes>
     </div>
   );
